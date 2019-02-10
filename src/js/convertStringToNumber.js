@@ -1,6 +1,6 @@
 export default function convertStringToNumber(str) {
-	str.trim();
+	let number = parseInt(str.trim(), 10);
 
-	if(str === '' || Number.isNaN(+str)) throw 'ERROR';
-	return +str;
+	if(str === '' && Number.isNaN(number)) throw new TypeError('ERROR');
+	return number;
 }
